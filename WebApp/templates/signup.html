@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block title %}Signup{% endblock %}
+
+{% block body %}
+<br>
+<!-- <br> -->
+{% for message in get_flashed_messages() %}
+{% if username %}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% else %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endif %}
+{% endfor %}
+
+{% if form.email.errors %}
+{% for message in form.email.errors %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+
+{% endif %}
+{% if form.password.errors %}
+{% for message in form.password.errors %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+{% endif %}
+
+<h2 class="text-center">Create your Style Transfer Account</h2>
+<br>
+
+<form method="post">
+    {{form.hidden_tag()}}
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{form.firstname.label(class="col-sm-2 col-form-label")}}
+            {{form.firstname(class="form-control",placeholder="Enter Firstname")}}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{form.lastname.label(class="col-sm-2 col-form-label")}}
+            {{form.lastname(class="form-control",placeholder="Enter Lastname")}}
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{form.username.label(class="col-sm-2 col-form-label")}}
+            {{form.username(class="form-control",placeholder="Enter Username")}}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{form.email.label(class="col-sm-2 col-form-label")}}
+            {{form.email(class="form-control",placeholder="Enter Email")}}
+        </div>
+    </div>
+
+    <div class="form-group">
+        {{form.address.label(class="col-sm-2 col-form-label")}}
+        {{form.address(class="form-control",placeholder="Enter Address")}}
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            {{form.password.label(class="col-sm-2 col-form-label")}}
+            {{form.password(class="form-control",placeholder="Enter Password")}}
+        </div>
+
+        <div class="form-group col-md-6">
+            {{form.password2.label(class="col-sm-2 col-form-label")}}
+            {{form.password2(class="form-control",placeholder="Confirm Password")}}
+        </div>
+    </div>
+
+    <br>
+    {{form.submit(class="btn btn-secondary")}}
+</form>
+
+{% endblock %}

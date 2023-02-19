@@ -1,0 +1,122 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block body %}
+{% for message in get_flashed_messages() %}
+{% if 'not' in message%}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{%else%}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{%endif%}
+
+{% endfor %}
+<div class="container">
+    <!-- Heading -->
+    <div class="row griddiv">
+        <div class="stylediv">
+            <h1 class="text-center">Style your Image </h1>
+        </div>
+    </div>
+
+    <!-- Row -->
+    <div class="row"
+        style="background-color: rgb(247, 237, 237); border-radius: 4px; box-shadow: 0 4px 8px rgb(72, 58, 199); padding: 20px 20px 20px 20px;">
+
+        <!-- First column -->
+        <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center align-items-center">
+            <form method="post" id="contentImg-form" enctype="multipart/form-data">
+                <div>
+                    <div>
+                        {% if 'not' in status %}
+                        <h5 style="color: rgb(192, 8, 8);margin-top:5px;" class="text-center">{{status}}</h5>
+                        {% else %}
+                        <h5 style="color: rgb(21, 128, 23);margin-top:5px;" class="text-center">{{status}}</h5>
+                        {% endif %}
+                    </div>
+                    <div>
+                        <div>
+                            <input type="file" name="contentImg" id="contentImg" class="form-control flex"
+                                accept="image/*" hidden>
+                            <label for="contentImg" class="contentimg"><img src="/static/to-generate.jpg"
+                                    id="contentImgPreview" class="rounded" style="width: 100%; min-height: 200px;"
+                                    alt="Select Content Image"></label>
+                        </div>
+                        <div>
+                            <button type="submit" class="btn btn-info btn-lg btn-block ">Upload</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div> <!-- End of 1st column -->
+
+        <!-- Select Style -->
+        <div class="col-12 col-sm-6 col-lg-4 d-flex justify-content-center align-items-center"
+            style=" align-content: center;">
+            <!-- gridcol1-->
+            <div class="style">
+                <form action="/imageGenerator/{{username}}" method="post">
+                    <div>
+                        <select name="style" id="style" class="selectstyle">
+                            <option value="select">Select a Style</option>
+                            <option value="monet">Monet</option>
+                            <option value="cezanne">Cezanne</option>
+                            <option value="vangogh">Vangogh</option>
+                            <option value="ukiyoe">Ukiyoe</option>
+                        </select>
+                        <input type="submit" value="Submit" class="submitbtn_" />
+                    </div>
+                </form>
+            </div>
+        </div> <!-- End of 2nd column -->
+
+        <!-- Generated Image -->
+        <div class="col-12 col-sm-6 col-lg-4">
+            <div class="generated-img-btn">
+                <div>
+                    <a href="/static/generated.jpg" download="/static/generated.jpg" class="generated-img">
+                        <div>
+                            <img src="/static/generated.jpg" name="generateImg" alt="Generated Image"
+                                style="width: 100%; min-height: 200px; text-decoration: none;">
+                        </div>
+                        <div>
+                            <button class="btn btn-info btn-lg btn-block"
+                                style="margin-top:8px; text-decoration: none;"><i
+                                    class="fa fa-download"></i>Download</button>
+                        </div>
+                    </a>
+
+                </div>
+                <div class="share-btn-container">
+                    <a href="https://www.facebook.com/sharer.php?u=http://143.244.135.235:8008/static/generated.jpg"
+                        class="facebook-btn" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://twitter.com/share?url=http://143.244.135.235:8008/static/generated.jpg"
+                        class="twitter-btn" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/shareArticle?url=http://143.244.135.235:8008/static/generated.jpg"
+                        class="linkedin-btn" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=http://143.244.135.235:8008/static/generated.jpg"
+                        class="whatsapp-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div> <!-- End of 3rd column -->
+    </div> <!-- End of row class -->
+</div> <!-- End of container class -->
+{% endblock %}

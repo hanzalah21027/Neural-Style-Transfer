@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+{% for message in get_flashed_messages() %}
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    {{message}}
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+{% endfor %}
+
+
+<section class="h-100 gradient-form">
+    <div class=" container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6" , style="background-color: antiquewhite;">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <img src="{{url_for('static', filename='logo.png')}}" style="width: 250px;"
+                                        alt="logo">
+                                </div>
+
+                                <h5 class="text-center">Login to your Account</h5>
+                                <br>
+                                <form method="post">
+                                    {{form.hidden_tag()}}
+
+
+                                    <div class="form-outline mb-4">
+
+                                        {{form.username(class="form-control",placeholder="Enter Username")}}
+                                    </div>
+
+                                    <div class="form-outline mb-4">
+                                        {{form.password(class="form-control",placeholder="Enter Password")}}
+                                    </div>
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        {{form.submit(class="btn btn-block gradient-custom-2 p-2 text-light")}}
+                                    </div>
+
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                <h4 class="mb-4">We are the NST Team</h4>
+                                <p class="small mb-0">The Neural Style Transfer project is a web application that uses a
+                                    <strong>Generative Adversarial Network (GAN) </strong>to apply the style of a chosen
+                                    artwork to a user-provided image. It was developed using Flask, CSS,
+                                    JavaScript, HTML,
+                                    Python, and PyTorch and includes features such as user login, signup, and the
+                                    ability to share the generated images on social media platforms. It allow users to
+                                    choose from four different styles: <strong>Ukiyoe, Monet, Cezanne, and
+                                        Vangogh</strong>.
+                                    The project was completed by <strong>Hanzalah Firdausi, Lasani Hussain, and Ankit
+                                        Kuswah</strong>
+                                    as part of their final project for Data Processing and Management coursework (ECE
+                                    560). We thank <strong>Dr. Pravesh Biyani</strong> and course TAs for their
+                                    supervision.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

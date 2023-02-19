@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}Profile{% endblock %}
+
+{% block body %}
+<br>
+<br>
+<h3 class="text-center">Profile</h3>
+<div class="card">
+    <div class="card-body">
+        <p class="text-left">Name : {{user.firstname}} {{user.lastname}}</p>
+        <p class="text-left">Username : {{user.username}}</p>
+        <p class="text-left">Address : {{user.address}}</p>
+        <p class="text-left">Email : {{user.email}}</p>
+    </div>
+</div>
+{% endblock %}

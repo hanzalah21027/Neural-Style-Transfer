@@ -1,0 +1,230 @@
+.selectstyle {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 2px;
+  transition: transform 0.5s;
+  border-color: rgb(168, 245, 245);
+  padding: 10px;
+  background-color: rgb(253, 253, 251);
+  box-shadow: 2px 5px 10px rgb(178, 180, 180);
+}
+
+.selectstyle:hover {
+  transform: scale(1.1);
+}
+
+.style {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  border-color: rgb(168, 245, 245);
+  background-color: rgb(254, 252, 252);
+  box-shadow: 2px 5px 10px rgb(80, 123, 224);
+  padding: 40px;
+}
+
+.submitbtn_ {
+  height: fit-content;
+  width: fit-content;
+  border-radius: 4px;
+  transition: transform 0.5s;
+  border-color: rgb(177, 245, 245);
+  padding: 10px;
+  background-color: rgb(251, 251, 249);
+  box-shadow: 2px 5px 10px rgb(229, 233, 233);
+  margin-left: 10px;
+}
+
+.submitbtn:hover {
+  transform: scale(1.1);
+}
+
+.griddiv {
+  height: 29vh;
+  justify-content: center;
+  align-content: center;
+  padding: 10px;
+}
+
+.gridcol2 {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.gridcol1 {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  /* padding: 10px; */
+  background-color: #9199ea;
+}
+
+.stylediv {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(250, 244, 241);
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 4px;
+  border-color: rgb(244, 125, 125);
+  background-image: url("static/image5.jpg");
+  box-shadow: 0 4px 8px rgb(73, 44, 160);
+  padding: 20px;
+}
+.styleheading {
+  color: #7a65f0;
+  text-align: center;
+  font: bold 80px Sans-Serif;
+  padding: 40px 0;
+  text-shadow: 1px 5px 4px rgb(252, 251, 251);
+}
+.imageClass {
+  align-items: center;
+}
+.contentimg {
+  min-height: 200px;
+  max-height: 500px;
+  max-width: 100%;
+  text-align: center;
+  border-radius: 4px;
+  transition: transform 0.5s;
+  background-color: rgb(251, 249, 249);
+  box-shadow: 2px 5px 10px rgb(80, 123, 224);
+  padding: 5px;
+}
+
+.contentimg:hover {
+  transform: scale(1.1);
+}
+
+.generated-img-btn {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.generated-img {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  max-height: 800px;
+  align-content: center;
+  justify-content: space-around;
+  transition: transform 0.5s;
+  box-shadow: 2px 5px 10px rgb(80, 123, 224);
+  background-color: rgb(255, 255, 255);
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.generated-img:hover {
+  transform: scale(1.1);
+}
+.content {
+  padding: 8px 9px;
+}
+
+.content p {
+  line-height: 1.9;
+}
+
+.content img {
+  max-height: 500px;
+}
+
+/* Share button container */
+
+.share-btn-container {
+  background-color: #fff;
+  display: flex;
+  right: 0;
+  width: fit-content;
+  position: fixed;
+  flex-direction: column;
+  justify-content: space-around;
+  box-shadow: 0 1px 2px rgb(247, 178, 178);
+  padding: 16px;
+}
+
+.share-btn-container a i {
+  font-size: 32px;
+}
+
+.share-btn-container a {
+  margin: 12px 0;
+  transition: 500ms;
+}
+
+.share-btn-container a:hover {
+  transform: scale(1.2);
+}
+
+.share-btn-container .fa-facebook {
+  color: #1877f2;
+}
+
+.share-btn-container .fa-twitter {
+  color: #1da1f2;
+}
+
+.share-btn-container .fa-whatsapp {
+  color: #25d366;
+}
+
+.share-btn-container .fa-instagram {
+  color: #fd1d1d;
+}
+
+.share-btn-container .fa-linkedin {
+  color: #0077b5;
+}
+
+/* Media query */
+@media (max-width: 870px) {
+  .content {
+    padding: 8px 32px;
+  }
+  .share-btn-container {
+    transform: unset;
+    top: unset;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    flex-direction: row;
+    box-shadow: 1px 0 2px rgb(0, 0, 0.3);
+    padding: 16px 0;
+  }
+  .share-btn-container a {
+    margin: 0 32px;
+  }
+  .styleheading {
+    padding: 20px;
+    font: bold 50px Sans-Serif;
+  }
+}
+
+@media (max-width: 1020px) {
+  .style {
+    padding: 20px;
+  }
+  .submitbtn {
+    margin-top: 10px;
+  }
+}
+
+/* @media(max-width:1225px){
+    .navbar{
+        width: 100%;
+        height: 40px;
+        padding: 10px;
+
+    }
+} */
